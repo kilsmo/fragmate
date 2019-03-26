@@ -28,9 +28,9 @@ are view layer only. Here are some ways that Fragmate differs to React:
 
 ## Implementation
 
-There is currently no implementation of Fragmate available in this repository.
-Code exists for an early prototype of Fragmate, but it needs to be cleaned up a little. In general, improvements will be shared sooner rather than later, and
-the repository will be in experimental stage for a long time.
+There are currently three modules that can be used by Fragmate web apps. fragmate.mjs (0.4kB)
+handles events and updates, fmdom.mjs (1.1kB) supports all html5 elements, and fmrenderstate.mjs (0.4kB)
+is there to support manual caching.
 
 ## Who should use Fragmate?
 
