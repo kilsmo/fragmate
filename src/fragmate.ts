@@ -1,7 +1,27 @@
 let renderListeners: RenderListener[] = [];
 let scopeStack: Array<string>;
 
-export class VElm {}
+/**
+ * A virtual dom element.
+ */
+export interface VElm {
+  name: string;
+  attributes: Array<string>;
+  children: Array<VElm>;
+}
+
+function toDom(elm: VElm): HTMLElement {
+  const htmlElms: Array<HTMLElement> = elm.children.map(
+    (c): HTMLElement => {
+      return toDom(c);
+    }
+  );
+  const helm: HTMLElement = document.createElement(elm.name);
+  htmlElms.forEach((e) => {
+    helm.appendChild(e);
+  });
+  return helm;
+}
 
 export interface RenderFunc {
   (props: object): VElm;
@@ -43,14 +63,16 @@ export function render(
   props: object,
   rootElm: HTMLElement
 ): void {
-  renderListeners.forEach(listener => {
+  renderListeners.forEach((listener) => {
     listener.renderStarted();
   });
 
   scopeStack = [];
   const velm = fn(props);
+  const elm = toDom(velm);
+  rootElm.appendChild(elm);
 
-  renderListeners.forEach(listener => {
+  renderListeners.forEach((listener) => {
     listener.renderEnded();
   });
 }
@@ -58,13 +80,13 @@ export function render(
 export function scope(id: string, fn: RenderFunc, props: object): VElm {
   scopeStack.push(id);
 
-  renderListeners.forEach(listener => {
+  renderListeners.forEach((listener) => {
     listener.scopeOpened(id);
   });
 
   const elm = fn(props);
 
-  renderListeners.forEach(listener => {
+  renderListeners.forEach((listener) => {
     listener.scopeClosed(id);
   });
 
@@ -75,6 +97,7 @@ export function scope(id: string, fn: RenderFunc, props: object): VElm {
 
 export function after(fn: RenderFunc, props: object, afterFn: AfterFunc): VElm {
   // TODO: implement the calling of afterFn.
+  console.log(afterFn);
   return fn(props);
 }
 
@@ -84,6 +107,7 @@ export function alien(
   ctor: CtorFunc,
   dtor: DtorFunc
 ): HTMLElement {
+  console.log(dtor);
   // TODO: implement alien the right way.
   return ctor(props);
 }
@@ -93,5 +117,5 @@ export function addRenderListener(listener: RenderListener): void {
 }
 
 export function removeRenderListener(listener: RenderListener): void {
-  renderListeners = renderListeners.filter(l => l !== listener);
+  renderListeners = renderListeners.filter((l) => l !== listener);
 }

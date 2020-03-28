@@ -1,0 +1,21 @@
+{
+  "name": "fragmate",
+  "version": "0.0.1",
+  "description": "State renderer",
+  "main": "index.js",
+  "repository": "git@github.com:kilsmo/fragmate.git",
+  "author": "Nicklas Westin <kilsmo@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "prettier": "^2.0.2",
+    "typedoc": "^0.17.3",
+    "typescript": "^3.8.3"
+  }
+}
