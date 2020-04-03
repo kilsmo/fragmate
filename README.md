@@ -31,7 +31,7 @@ Fragmate focuses on three things, speed, size and API. Fragmate aims to have hig
 
 Since Fragmate is just a state renderer, there will be room for innovative frameworks on top of it. Fragmate will also have a companion, Fragstate. Fragstate could include features such as state mutation, animation, debugging, scope-local states, actions when showing/hiding a scope, and caching data from the server.
 
-It takes a lot for a state renderer like Fragmate to succeed. Success is when application is developed with Fragmate, and when developers enjoy building applications with fragmate.
+It takes a lot for a state renderer like Fragmate to succeed. Success is when applications are developed with Fragmate, and when developers enjoy building applications with Fragmate.
 
 1. Applications
 2. Developers
