@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "State renderer",
   "main": "index.js",
+  "scripts": {
+    "build": "cd src && node fmdomgenerator.js"
+  },
   "repository": "git@github.com:kilsmo/fragmate.git",
   "author": "Nicklas Westin <kilsmo@gmail.com>",
   "license": "MIT",
