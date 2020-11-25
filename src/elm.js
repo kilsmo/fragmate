@@ -1,4 +1,4 @@
-function elm(name, props) {
+export function elm(name, props) {
   const e = document.createElement(name);
   for (let x in props) {
     if (x == 'children') {
