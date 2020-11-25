@@ -23,7 +23,11 @@ export function elm(name, props) {
       }
     }
     else {
-      e.setAttribute(x, props[x]);
+      if (x.startsWith('on')) {
+        e.addEventListener(x.substring(2), props[x]);
+      } else {
+        e.setAttribute(x, props[x]);
+      }
     }
   }
   return e;
