@@ -1,4 +1,4 @@
 
 export function tag(props) {
-  return htmlelm('tag', props);
+  return elm('tag', props);
 }
