@@ -24,4 +24,4 @@ if (!fs.existsSync('lib')){
 }
 
 fs.writeFileSync('lib/fmdom.js', fileContent);
-fs.copyFileSync('src/fragmate.mjs', 'lib/fragmate.js');
+fs.copyFileSync('src/fragmate.js', 'lib/fragmate.js');
