@@ -4,7 +4,7 @@
   "description": "State renderer",
   "main": "index.js",
   "scripts": {
-    "build": "cd src && node fmdomgenerator.js"
+    "build": "node src/build.js"
   },
   "repository": "git@github.com:kilsmo/fragmate.git",
   "author": "Nicklas Westin <kilsmo@gmail.com>",
