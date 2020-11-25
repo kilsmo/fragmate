@@ -16,7 +16,7 @@ export function elm(name, props) {
       const children = props[x];
       for (let child of children) {
         e.appendChild(
-          typeof (child == 'string') ?
+          (typeof child) == 'string' ?
             document.createTextNode(child) :
             child
         );
