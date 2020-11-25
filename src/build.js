@@ -13,9 +13,9 @@ function generateDomString(domHtmlElm, domTagTemplate, domTagList) {
   return domString;
 }
 
-const htmlElmCode = fs.readFileSync('src/fmdomhtmlelm.js', 'utf8');
-const tagTemplateCode = fs.readFileSync('src/fmdomtagtemplate.js', 'utf8');
-const tags = JSON.parse(fs.readFileSync('src/fmdomtaglist.json', 'utf8'));
+const htmlElmCode = fs.readFileSync('src/elm.js', 'utf8');
+const tagTemplateCode = fs.readFileSync('src/tagtemplate.js', 'utf8');
+const tags = JSON.parse(fs.readFileSync('src/taglist.json', 'utf8'));
 
 const fileContent = generateDomString(htmlElmCode, tagTemplateCode, tags);
 
