@@ -18,13 +18,19 @@ function decrease() {
 }
 
 function counter(state) {
-  return div({
-    children: [
-      button({ onclick: decrease, children: ['-'] }),
-      button({ onclick: increase, children: ['+'] }),
-      state.counter.toString()
-    ]
-  })
+  return div(null, [
+    button({
+      onclick: decrease
+    }, [
+      '-'
+    ]),
+    button({
+      onclick: increase
+    }, [
+      '+'
+    ]),
+    state.counter.toString()
+  ]);
 }
 
 onload = function() {

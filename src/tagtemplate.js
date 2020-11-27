@@ -1,4 +1,4 @@
 
-export function tag(props) {
-  return elm('tag', props);
+export function tag(attrs, children) {
+  return elm('tag', attrs, children);
 }

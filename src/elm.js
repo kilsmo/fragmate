@@ -9,25 +9,24 @@
  * @param {string} name
  * @param {object} props
  */
-export function elm(name, props) {
+export function elm(name, attrs, children) {
   const e = document.createElement(name);
-  for (let x in props) {
-    if (x == 'children') {
-      const children = props[x];
-      for (let child of children) {
-        e.appendChild(
-          (typeof child) == 'string' ?
-            document.createTextNode(child) :
-            child
-        );
+  if (attrs) {
+    for (let x in attrs) {
+      if (x.startsWith('on')) {
+        e.addEventListener(x.substring(2), attrs[x]);
+      } else {
+        e.setAttribute(x, attrs[x]);
       }
     }
-    else {
-      if (x.startsWith('on')) {
-        e.addEventListener(x.substring(2), props[x]);
-      } else {
-        e.setAttribute(x, props[x]);
-      }
+  }
+  if (children) {
+    for (let child of children) {
+      e.appendChild(
+        (typeof child) == 'string' ?
+          document.createTextNode(child) :
+          child
+      );
     }
   }
   return e;
