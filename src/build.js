@@ -25,4 +25,5 @@ if (!fs.existsSync('lib')){
 
 fs.copyFileSync('src/fragmate.js', 'lib/fragmate.js');
 fs.copyFileSync('src/elm.js', 'lib/elm.js');
+fs.copyFileSync('src/nodecache.js', 'lib/nodecache.js');
 fs.writeFileSync('lib/fmdom.js', fileContent);

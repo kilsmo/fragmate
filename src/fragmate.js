@@ -1,3 +1,5 @@
+import { afterRender, startRender } from './nodecache.js';
+
 let parentElm;
 let renderFn;
 
@@ -19,7 +21,9 @@ export function init(parentElement, renderFunction) {
  * @param {object} state The state to render. (an object)
  */
 export function render(state) {
+  startRender();
   const renderTree = renderFn(state);
   parentElm.innerHTML = '';
   parentElm.appendChild(renderTree);
+  afterRender();
 }

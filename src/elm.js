@@ -1,3 +1,5 @@
+import { getKeptNode, keepNode } from './nodecache.js';
+
 /**
  * Returns an element with a name and its props.
  * children is a special prop, to simplify the
@@ -10,7 +12,23 @@
  * @param {object} props
  */
 export function elm(name, attrs, children) {
-  const e = document.createElement(name);
+  let e;
+  let keptNode;
+  if (attrs && attrs.id) {
+    keptNode = getKeptNode(attrs.id);
+  }
+  if (keptNode) {
+    e = keptNode;
+    e.innerHTML = '';
+    for (let i = e.attributes.length - 1; i >= 0; i--){
+      e.removeAttribute(e.attributes[i].name);
+    }
+  } else {
+    e = document.createElement(name);
+  }
+  if (attrs && attrs.id) {
+    keepNode(e, attrs.id);
+  }
   if (attrs) {
     for (let x in attrs) {
       if (x.startsWith('on')) {
