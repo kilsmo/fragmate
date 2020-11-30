@@ -6,60 +6,22 @@ function rerender() {
   render({});
 }
 
+function getChildren() {
+  const children = [];
+  for (let i = 0; i < 40; i++) {
+    children.push(helloDiv());
+  }
+  children.push(button({ onclick: rerender }, ['Rerender']));
+  return children;
+}
+
 function helloDiv() {
   return div(null, ['Hello world']);
 }
 
 function scroll() {
   console.log('scroll');
-  return div(null, [
-    div({ overflow: 'scroll' }, [
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      helloDiv(),
-      button({ onclick: rerender }, ['Rerender'])
-    ])
-  ]);
+  return div(null, [div({ overflow: 'scroll' }, getChildren())]);
 }
 
 onload = function() {
