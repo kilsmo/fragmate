@@ -13,7 +13,7 @@ big improvement for the developer.
 
 Redux is a framework where all state is explicit and everything is in one state.
 
-An ideal framework would be a framework that given an external, explicit state
+An ideal framework according to me would be a framework that given an external, explicit state
 renders the application with the help of a function that takes the state as an
 argument, using functional programming style and composition.
 
@@ -25,5 +25,5 @@ Since there are no optimizations available, Fragmate is not suitable for buildin
 real applications. There are, however, simple proof-of-concept applications
 that use Fragmate.
 
-Fragmate wants to keep the simple API that it currently provides, and at the same
+Fragmate aims to keep the simple API that it currently provides, and at the same
 time, have performance on par or better than established frameworks.
