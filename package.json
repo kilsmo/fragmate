@@ -1,13 +1,24 @@
 {
   "name": "fragmate",
-  "version": "0.0.1",
-  "description": "State renderer",
-  "main": "index.js",
+  "version": "0.2.0",
+  "description": "A lightweight DOM element creation library for JavaScript.",
+  "main": "dist/fragmate.umd.js",
+  "module": "dist/fragmate.esm.js",
   "scripts": {
-    "build": "node src/build.js"
+    "build": "vite build",
+    "test": "vitest"
   },
-  "repository": "git@github.com:kilsmo/fragmate.git",
-  "author": "Nicklas Westin <kilsmo@gmail.com>",
+  "keywords": [
+    "dom",
+    "html",
+    "javascript",
+    "vite"
+  ],
+  "author": "Nicklas Westin",
   "license": "MIT",
-  "private": false
+  "devDependencies": {
+    "jsdom": "^26.0.0",
+    "vite": "^4.0.0",
+    "vitest": "^0.32.4"
+  }
 }
